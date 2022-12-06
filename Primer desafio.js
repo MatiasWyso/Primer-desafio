@@ -10,16 +10,16 @@ class ProductManager {
             return this.products;
         }
     
-        addProducts(titulo, descripcion, precio, miniatura, codigo, stock){
+        addProducts(titulo, descripcion, precio, foto, codigo, stock){
             ProductManager.idIncremento++;
             const code = this.products.find(c => c.codigo === codigo); 
                 const nuevoProducto = {
                     id:ProductManager.idIncremento,
                     title: titulo,
-                    desc: descripcion,
+                    descript: descripcion,
                     price: precio,
-                    thumbnai: miniatura,
-                    codigo: codigo,
+                    thumbnail: foto,
+                    code: codigo,
                     stock: stock,
                 } 
     
@@ -52,9 +52,9 @@ class ProductManager {
     
     const myProductManager = new ProductManager();
     console.log(myProductManager.getProducts());
-    console.log(myProductManager.addProducts( 'Producto Prueba','Este es un producto prueba', 200, 'Sin imagen', 'abc123', 25));
-    console.log(myProductManager.addProducts('producto prueba', 'Este es un producto prueba', 200, 'Sin imagen', 'abc123', 25));
-    console.log(myProductManager.addProducts( 'Este es un producto prueba', 200, 'Sin imagen', 'abc1234', 25));
+    console.log(myProductManager.addProducts( 'Item','prueba', 300, 'Sin imagen', 'asdasf', 15));
+    console.log(myProductManager.addProducts('Item', ' prueba', 5200, 'Sin imagen', 'gareearg', 10));
+    console.log(myProductManager.addProducts( 'Item','prueba', 200, 'Sin imagen', 'dafklj', 12));
     console.log(myProductManager.getProducts());
     console.log(myProductManager.getProductsById(1  ));
     
